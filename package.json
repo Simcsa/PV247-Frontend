@@ -1,0 +1,24 @@
+{
+  "name": "pv247-chat",
+  "version": "0.0.1",
+  "description": "chat",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Simcsa/pv247-chat.git"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.17"
+  },
+  "dependencies": {
+    "react": "16.1.0",
+    "react-dom": "16.1.0",
+    "styled-components": "2.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
