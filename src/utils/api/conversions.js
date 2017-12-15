@@ -9,6 +9,12 @@ export const convertToServerDetails = (details) => JSON.stringify({
     ...details,
 });
 
-export const convertChannelsFromServerDetails = (serverDetails) => ({
-    channels: Immutable.fromJS(serverDetails.channels).toList(),
+export const convertChannelsFromServerDetails = (serverDetails) => (
+    serverDetails.channels.map((channel) => convertChannel(channel))
+);
+
+export const convertChannel = (channel) => ({
+    ...JSON.parse(channel.customData || '{}'),
+    name: channel.name,
+    id: channel.id,
 });

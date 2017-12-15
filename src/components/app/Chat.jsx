@@ -12,7 +12,7 @@ export class Chat extends React.PureComponent {
 
     render() {
         return (
-            <SplitPane split="vertical" defaultSize="20%">
+            <SplitPane split="vertical" defaultSize="25%">
                 <Channels/>
                 <Messages/>
             </SplitPane>

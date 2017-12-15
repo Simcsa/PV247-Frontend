@@ -9,10 +9,11 @@ export const startRegistration = () => ({
     type: actionTypes.SHARED_REGISTRATION_STARTED,
 });
 
-export const receiveValidToken = (token) => ({
+export const receiveValidToken = (token, userEmail) => ({
     type: actionTypes.SHARED_AUTHENTICATION_TOKEN_RECEIVED,
     payload: {
         token,
+        userEmail,
     }
 });
 

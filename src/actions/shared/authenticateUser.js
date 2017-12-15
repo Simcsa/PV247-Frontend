@@ -18,7 +18,7 @@ export const authenticateUser = (userEmail, destinationLocation) =>
 
         return fetchAuthToken(userEmail)
             .then((token) => {
-                dispatch(receiveValidToken(token));
+                dispatch(receiveValidToken(token, userEmail));
                 dispatch(push(destinationLocation));
 
                 localStorage.setItem(keys.SHARED_TOKEN, JSON.stringify(token));

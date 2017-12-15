@@ -10,25 +10,22 @@ const ContentLayout = () => (
     <div className="container-fluid">
         <div className="row">
             <HeadInHelmet />
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Chat Application</a>
+            <nav className="navbar navbar-inverse">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <a className="navbar-brand" href="#">Chat Application</a>
                     </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><Link to={`${ROOT}`}>Home</Link></li>
+                    <ul className="nav navbar-nav">
+                        <li className="active"><Link to={`${ROOT}`}>Home</Link></li>
                         <li><Link to={`${PROFILE}`}>User Profile</Link></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul className="nav navbar-nav navbar-right">
                         <li><LogoutButton /></li>
                     </ul>
                 </div>
             </nav>
+            <Errors />
             <Content />
-            <div className="col-sm-12 col-md-9 col-lg-push-1 col-lg-5">
-                <div className="form-group"/>
-                <Errors />
-            </div>
         </div>
     </div>
 );

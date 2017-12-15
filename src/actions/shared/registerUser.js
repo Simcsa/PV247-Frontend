@@ -20,7 +20,9 @@ export const registerUser = (userEmail, userName, destinationLocation) =>
 
         const details = {
             email: userEmail,
-            customData: userName,
+            customData: {
+                name: userName
+            },
         };
 
         return postRequest(API_CREATE_USER_URI, EXAMPLE_USER_TOKEN, details)

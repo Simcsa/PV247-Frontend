@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { MessagePane } from './Messages.styles.jsx';
+import { MessagePane } from './Messages.styles.js';
 
 export class Messages extends React.PureComponent {
 
@@ -11,7 +11,7 @@ export class Messages extends React.PureComponent {
     render() {
         return (
             <MessagePane>
-                Messages
+                <h3>Messages</h3>
             </MessagePane>
         );
     }
