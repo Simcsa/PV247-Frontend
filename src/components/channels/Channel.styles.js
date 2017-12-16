@@ -7,3 +7,7 @@ export const ChannelListGroup = styled.li`
 export const ChannelNameSpan = styled.span`
 	font-size: 20px;
 `;
+
+export const GlyphiconSpan = styled.span`
+    padding-right: 5px;
+`;

@@ -14,4 +14,4 @@ export const API_FILE_URI = `${API_URI}/file`;
 export const API_GET_FILE_DOWNLOAD_LINK_URI = (fileId) => `${API_FILE_URI}/${fileId}/download-link`;
 
 export const API_MESSAGES_URI = (channelId) => `${API_URI}/app/${API_APP_ID}/channel/${channelId}/message`;
-export const API_DELETE_MESSAGE_URI = (channelId, messageId) => `${API_URI}/app/${API_APP_ID}/channel/${channelId}/message/${messageId}`;
+export const API_UPDATE_MESSAGE_URI = (channelId, messageId) => `${API_URI}/app/${API_APP_ID}/channel/${channelId}/message/${messageId}`;

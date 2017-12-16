@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ChannelInput } from "./Channels.styles";
-import { ChannelListGroup, ChannelNameSpan } from "./Channel.styles";
+import { ChannelListGroup, ChannelNameSpan, GlyphiconSpan } from "./Channel.styles";
 
 export class Channel extends React.PureComponent {
 
@@ -48,9 +48,9 @@ export class Channel extends React.PureComponent {
                             {this.props.channel.name}
                         </ChannelNameSpan>
                         &nbsp;
-                        <span onClick={() => this.toggleEditing()}>
+                        <GlyphiconSpan className="pull-right" onClick={() => this.toggleEditing()}>
                             <i className="glyphicon glyphicon-pencil" aria-hidden="true"/>
-                        </span>
+                        </GlyphiconSpan>
                     </span>
                 }
                 {this.state.editing &&
@@ -68,12 +68,9 @@ export class Channel extends React.PureComponent {
                 }
 
                 &nbsp;
-                <span onClick={() => this.props.deleteChannel(this.props.channel.id)}>
+                <GlyphiconSpan className="pull-right" onClick={() => this.props.deleteChannel(this.props.channel.id)}>
                     <i className="glyphicon glyphicon-trash"  aria-hidden="true" />
-                </span>
-                <span className="pull-right" >
-                    <span className="label label-primary">12</span>
-                </span>
+                </GlyphiconSpan>
             </ChannelListGroup>
         );
     }

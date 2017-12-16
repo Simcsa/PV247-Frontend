@@ -24,7 +24,10 @@ export const renameChannel = (channel, channelName) =>
             path: "/channels/" + channel.id,
             op: "replace",
             value: {
-                ...channel,
+                customData: JSON.stringify({
+                    owner: channel.owner,
+                }),
+                id: channel.id,
                 name: channelName,
             }
         }];

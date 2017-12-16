@@ -23,14 +23,6 @@ export class Messages extends React.Component {
         this.handleNewMessageChange = this.handleNewMessageChange.bind(this);
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        if(nextProps.channel && this.props.channel && nextProps.channel.id === this.props.channel.id
-        && nextProps.messages.count() === this.props.messages.count()) {
-            return false;
-        }
-        return true;
-    }
-
     componentWillMount() {
         this.setState({newMessageValue: null});
     }

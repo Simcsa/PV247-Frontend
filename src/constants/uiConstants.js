@@ -18,3 +18,4 @@ export const CHANNEL_INVITE_USER_FAILED_MESSAGE = 'Inviting user to channel fail
 export const MESSAGES_FETCH_FAILED_MESSAGE = 'Fetching messages failed. Try to reload a page.';
 export const MESSAGE_SEND_FAILED_MESSAGE = 'Sending message failed. Try to send it again.';
 export const MESSAGE_DELETE_FAILED_MESSAGE = 'Deleting message failed.';
+export const MESSAGE_VOTE_FAILED_MESSAGE = 'Voting on message failed.';

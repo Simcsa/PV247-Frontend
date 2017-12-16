@@ -39,3 +39,12 @@ export const finishDeletingMessage = (messageId) => ({
         messageId,
     }
 });
+
+export const failVotingMessage = errorActionFactory(actionTypes.MESSAGE_VOTE_FAILED);
+
+export const finishVotingMessage = (message) => ({
+    type: actionTypes.MESSAGE_VOTE,
+    payload: {
+        message,
+    }
+});

@@ -5,6 +5,7 @@ import {
     MESSAGES_FETCH_FAILED,
     MESSAGE_SEND_FINISHED,
     MESSAGE_DELETE_FINISHED,
+    MESSAGE_VOTE,
 } from '../../constants/actionTypes';
 
 export const messagesList = (prevState = Immutable.List(), action) => {
@@ -17,6 +18,11 @@ export const messagesList = (prevState = Immutable.List(), action) => {
 
         case MESSAGE_DELETE_FINISHED:
             return prevState.filterNot(message => message.id === action.payload.messageId);
+
+        case MESSAGE_VOTE:
+            const voteMessageIndex = prevState.findIndex((message) => action.payload.message.id === message.id);
+            const newState = prevState.update(voteMessageIndex, () => action.payload.message)
+            return newState;
 
         case CHANNELS_FETCH_STARTED:
         case MESSAGES_FETCH_FAILED:

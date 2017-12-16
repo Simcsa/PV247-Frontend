@@ -13,3 +13,8 @@ export const MessageDiv = styled.div`
 export const MessageSenderSpan = styled.span`
     font-weight: bold;
 `;
+
+export const GlyphiconSpan = styled.span`
+    padding-left: 10px;
+    padding-right: 2px;
+`;
