@@ -22,6 +22,7 @@ export const authenticateUser = (userEmail, destinationLocation) =>
                 dispatch(push(destinationLocation));
 
                 localStorage.setItem(keys.SHARED_TOKEN, JSON.stringify(token));
+                localStorage.setItem(keys.SHARED_USER_EMAIL, JSON.stringify(userEmail));
                 localStorage.setItem(keys.SHARED_TOKEN_TIMESTAMP, JSON.stringify(new Date().getTime()));
             })
             .catch((error) => {

@@ -9,9 +9,10 @@ const mapStateToProps = (state) => ({
     isUpdatingChannels: state.channels.isUpdatingChannels,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
     fetchChannels: () => dispatch(fetchChannels()),
     createChannel: (channelName) => dispatch(createChannel(channelName)),
+    switchChannel: (newChannel) => ownProps.switchChannel(newChannel),
 });
 
 const enhancer = connect(mapStateToProps, mapDispatchToProps);

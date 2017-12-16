@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 const LogoutButton = ({ onClick }) => (
     <button
         type="button"
-        className="btn btn-danger navbar-btn"
+        className="btn btn-default navbar-btn"
         onClick={onClick}
     >
         Logout

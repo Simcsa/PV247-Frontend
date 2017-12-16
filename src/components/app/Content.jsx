@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 import * as routes from '../../constants/routes';
-import { Chat } from "./Chat";
 import { UserProfile } from "../profile/UserProfile";
+import { Chat } from "../../containers/app/Chat";
 
 const Content = () => [
     <Route exact path={routes.ROOT} component={Chat} key="default" />,

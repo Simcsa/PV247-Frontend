@@ -20,7 +20,7 @@ const ContentLayout = () => (
                         <li><Link to={`${PROFILE}`}>User Profile</Link></li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
-                        <li><LogoutButton /></li>
+                        <li><LogoutButton /> &nbsp;</li>
                     </ul>
                 </div>
             </nav>

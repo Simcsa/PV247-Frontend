@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { ChannelInput } from "./Channels.styles";
+import { ChannelListGroup, ChannelNameSpan } from "./Channel.styles";
 
 export class Channel extends React.PureComponent {
 
@@ -7,6 +9,7 @@ export class Channel extends React.PureComponent {
         channel: PropTypes.object,
         deleteChannel: PropTypes.func.isRequired,
         renameChannel: PropTypes.func.isRequired,
+        switchChannel: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -37,11 +40,13 @@ export class Channel extends React.PureComponent {
 
     render() {
         return (
-            <li className="list-group-item-inverted">
+            <ChannelListGroup className="list-group-item-inverted">
 
                 {!this.state.editing &&
                     <span>
-                        {this.props.channel.name}
+                        <ChannelNameSpan onClick={() => this.props.switchChannel(this.props.channel)}>
+                            {this.props.channel.name}
+                        </ChannelNameSpan>
                         &nbsp;
                         <span onClick={() => this.toggleEditing()}>
                             <i className="glyphicon glyphicon-pencil" aria-hidden="true"/>
@@ -50,10 +55,9 @@ export class Channel extends React.PureComponent {
                 }
                 {this.state.editing &&
                     <span>
-                        <input
+                        <ChannelInput
                             className="input-sm"
                             type="text"
-                            style={{color: "black"}}
                             onChange={this.handleChannelRename}
                             placeholder={this.props.channel.name}
                         />
@@ -68,9 +72,9 @@ export class Channel extends React.PureComponent {
                     <i className="glyphicon glyphicon-remove"  aria-hidden="true" />
                 </span>
                 <span className="pull-right" >
-                    <span className="label label-danger">12</span>
+                    <span className="label label-primary">12</span>
                 </span>
-            </li>
+            </ChannelListGroup>
         );
     }
 }

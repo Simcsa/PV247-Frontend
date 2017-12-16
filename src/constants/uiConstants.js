@@ -14,3 +14,6 @@ export const CREATE_CHANNEL_FAILED_MESSAGE = 'Creating channel failed.';
 export const DELETE_CHANNEL_FAILED_MESSAGE = 'Deleting channel failed.';
 export const RENAME_CHANNEL_FAILED_MESSAGE = 'Renaming channel failed.';
 export const CHANNEL_INVITE_USER_FAILED_MESSAGE = 'Inviting user to channel failed.';
+
+export const FETCH_MESSAGES_FAILED_MESSAGE = 'Fetching messages failed. Try to reload a page.';
+export const SEND_MESSAGE_FAILED_MESSAGE = 'Sending message failed. Try to send it again.';

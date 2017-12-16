@@ -19,6 +19,7 @@
     "memoizee": "^0.4.11",
     "prop-types": "^15.6.0",
     "react": "16.1.0",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "16.1.0",
     "react-helmet": "^5.2.0",
     "react-loader-advanced": "^1.7.1",

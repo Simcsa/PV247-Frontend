@@ -3,6 +3,7 @@ import React from 'react';
 import { ChannelPane } from './Channels.styles.js';
 import { Loader } from "../../containers/shared/Loader";
 import { Channel } from "../../containers/channels/Channel";
+import { ChannelForm, ChannelInput } from "./Channels.styles";
 
 export class Channels extends React.PureComponent {
 
@@ -12,6 +13,7 @@ export class Channels extends React.PureComponent {
         isUpdatingChannels: PropTypes.bool,
         fetchChannels: PropTypes.func.isRequired,
         createChannel: PropTypes.func.isRequired,
+        switchChannel: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -41,26 +43,26 @@ export class Channels extends React.PureComponent {
                     <h2>Channels</h2>
                     <ul className="list-group">
                         {this.props.channels && this.props.channels.map((ch) =>
-                            (<Channel channel={ch} key={ch.id}/>)
+                            (<Channel switchChannel={(newChannel) => this.props.switchChannel(newChannel)} channel={ch} key={ch.id}/>)
                         )}
                     </ul>
-                    <form className="form-inline">
-                        <input
+                    <ChannelForm className="form-inline">
+                        <ChannelInput
                             className="input-sm"
                             type="text"
-                            style={{color: "black"}}
                             onChange={this.handleNewChannelChange}
                             placeholder="New channel"
                         />
+                        &nbsp;
                         <button
                             type="submit"
-                            className="btn btn-danger btn-sm"
+                            className="btn btn-default btn-sm"
                             disabled={this.props.isUpdatingChannels}
                             onClick={this.createNewChannel}
                         >
                             Add channel
                         </button>
-                    </form>
+                    </ChannelForm>
                 </Loader>
             </ChannelPane>
         );

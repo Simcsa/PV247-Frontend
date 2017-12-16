@@ -18,7 +18,7 @@ const LoginForm = ({ handleSubmit }) => (
                 validate={validateNonEmptyness}
             />
         </div>
-        <button className="btn btn-danger btn-lg" type="submit" >Log in</button>
+        <button className="btn btn-primary btn-lg" type="submit" >Log in</button>
     </form>
 );
 

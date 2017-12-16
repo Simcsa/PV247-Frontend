@@ -30,7 +30,7 @@ const RegisterForm = ({ handleSubmit }) => (
                 validate={validateNonEmptyness}
             />
         </div>
-        <button className="btn btn-danger btn-lg" type="submit" >Register</button>
+        <button className="btn btn-primary btn-lg" type="submit" >Register</button>
     </form>
 );
 

@@ -1,10 +1,16 @@
-import { getPersistedToken } from './getPersistedToken';
+import { getPersistedToken, getPersistedUserEmail } from './getPersistedToken';
+import * as Immutable from 'immutable';
 
 export const getInitialState = () => ({
     shared: {
-        token: getPersistedToken()
+        token: getPersistedToken(),
+        userEmail: getPersistedUserEmail(),
     },
     channels: {
-        isCreatingChannel: false,
+        isUpdatingChannels: false,
+    },
+    messages: {
+        messagesList: Immutable.List(),
+        isFetchingMessages: false,
     }
 });

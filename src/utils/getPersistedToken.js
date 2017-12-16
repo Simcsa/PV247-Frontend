@@ -17,6 +17,7 @@ const isTokenTimeStampValid = () => {
 
 const removeInvalidToken = () => {
     localStorage.removeItem(keys.SHARED_TOKEN_TIMESTAMP);
+    localStorage.removeItem(keys.SHARED_USER_EMAIL);
     localStorage.removeItem(keys.SHARED_TOKEN);
 };
 
@@ -29,4 +30,10 @@ export const getPersistedToken = () => {
     }
 
     return persistedTokenJSON && JSON.parse(persistedTokenJSON);
+};
+
+export const getPersistedUserEmail = () => {
+    const persistedUserEmailJSON = localStorage.getItem(keys.SHARED_USER_EMAIL) || null;
+
+    return persistedUserEmailJSON && JSON.parse(persistedUserEmailJSON);
 };

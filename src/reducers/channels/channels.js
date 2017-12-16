@@ -6,5 +6,5 @@ import { isUpdatingChannels } from "./isUpdatingChannels";
 export const channels = combineReducers({
     isFetchingChannels,
     channelsList,
-    isCreatingChannel: isUpdatingChannels,
+    isUpdatingChannels,
 });

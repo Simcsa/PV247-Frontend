@@ -18,3 +18,15 @@ export const convertChannel = (channel) => ({
     name: channel.name,
     id: channel.id,
 });
+
+export const convertMessagesFromServerDetails = (serverDetails) => (
+    serverDetails.map((message) => convertMessageFromServer(message))
+);
+
+export const convertMessageFromServer = (message) => ({
+    ...JSON.parse(message.customData || '{}'),
+    id: message.id,
+    value: message.value,
+    createdAt: message.createdAt,
+    createdBy: message.createdBy,
+});

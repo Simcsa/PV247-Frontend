@@ -25,7 +25,9 @@ export const createChannel = (channelName) =>
             op: "add",
             value: {
                 name: channelName,
-                customData: JSON.stringify({owner: userEmail}),
+                customData: JSON.stringify({
+                    owner: userEmail
+                }),
             }
         }];
 
