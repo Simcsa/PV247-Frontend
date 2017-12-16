@@ -1,6 +1,5 @@
 import {
     failFetchingProfilePicture,
-    startFetchingProfilePicture,
     updateProfilePicture
 } from './actionCreators';
 import { API_GET_FILE_DOWNLOAD_LINK_URI } from '../../constants/api';
@@ -10,8 +9,6 @@ import { AVATAR_FETCH_FAILED_MESSAGE } from "../../constants/uiConstants";
 
 export const fetchUserAvatar = (avatarId) =>
     async (dispatch, getState) => {
-        dispatch(startFetchingProfilePicture());
-
         const authToken = getState().shared.token;
 
         try {

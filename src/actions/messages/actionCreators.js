@@ -26,3 +26,16 @@ export const finishSendingMessage = (message) => ({
         message,
     }
 });
+
+export const startDeletingMessage = () => ({
+    type: actionTypes.MESSAGE_DELETE_STARTED,
+});
+
+export const failDeletingMessage = errorActionFactory(actionTypes.MESSAGE_DELETE_FAILED);
+
+export const finishDeletingMessage = (messageId) => ({
+    type: actionTypes.MESSAGE_DELETE_FINISHED,
+    payload: {
+        messageId,
+    }
+});

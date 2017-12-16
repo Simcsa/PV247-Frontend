@@ -6,6 +6,7 @@ export class Message extends React.PureComponent {
 
     static propTypes = {
         message: PropTypes.object,
+        deleteMessage: PropTypes.func.isRequired,
     };
 
     render() {
@@ -19,6 +20,10 @@ export class Message extends React.PureComponent {
                     </MessageSenderSpan>
                     &nbsp;
                     {date.toLocaleString()}
+                    &nbsp;
+                    <span onClick={this.props.deleteMessage}>
+                        <i className="glyphicon glyphicon-trash"  aria-hidden="true" />
+                    </span>
                 </p>
                 <p>
                     {this.props.message.value}

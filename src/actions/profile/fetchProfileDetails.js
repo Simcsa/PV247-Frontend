@@ -1,8 +1,7 @@
 import {
     updateProfileDetails,
     failFetchingProfileDetails,
-    startFetchingProfileDetails,
-    startFetchingProfilePicture
+    startFetchingProfileDetails, startFetchingProfilePicture, finishFetchingProfilePicture,
 } from './actionCreators';
 import {
     API_USER_URI
@@ -24,12 +23,14 @@ import { getRequest } from "../../utils/api/getRequest";
 export const fetchProfileDetails = () =>
     (dispatch, getState) => {
         dispatch(startFetchingProfileDetails());
+        dispatch(startFetchingProfilePicture());
 
         const { token, userEmail } = getState().shared;
 
         return getRequest(API_USER_URI(userEmail), token)
             .then((serverDetails) => dispatch(updateProfileDetails(convertProfileFromServerDetails(serverDetails))))
-            .then(({ payload: {details: { avatarId } = {} } = {} }) => avatarId && dispatch(fetchUserAvatar(avatarId)))
+            .then(({ payload: {details: { avatarId } = {} } = {} }) =>
+            { avatarId ? dispatch(fetchUserAvatar(avatarId)) : dispatch(finishFetchingProfilePicture)})
             .catch((error) => {
                 if (error.statusCode === 401) {
                     dispatch(invalidateToken());

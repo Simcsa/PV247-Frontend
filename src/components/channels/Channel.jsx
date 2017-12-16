@@ -69,7 +69,7 @@ export class Channel extends React.PureComponent {
 
                 &nbsp;
                 <span onClick={() => this.props.deleteChannel(this.props.channel.id)}>
-                    <i className="glyphicon glyphicon-remove"  aria-hidden="true" />
+                    <i className="glyphicon glyphicon-trash"  aria-hidden="true" />
                 </span>
                 <span className="pull-right" >
                     <span className="label label-primary">12</span>

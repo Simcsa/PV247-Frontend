@@ -13,6 +13,11 @@ export const startFetchingProfilePicture = () => ({
 
 export const failFetchingProfilePicture = errorActionFactory(actionTypes.PROFILE_AVATAR_FETCH_FAILED);
 
+export const finishFetchingProfilePicture = () => ({
+    type: actionTypes.PROFILE_AVATAR_FETCH_FINISHED,
+});
+
+
 export const updateProfileDetails = (details) => ({
     type: actionTypes.PROFILE_DETAILS_UPDATE,
     payload: {

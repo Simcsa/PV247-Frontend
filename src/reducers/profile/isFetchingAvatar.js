@@ -2,6 +2,7 @@ import {
     PROFILE_AVATAR_FETCH_STARTED,
     PROFILE_AVATAR_FETCH_FAILED,
     PROFILE_AVATAR_UPDATE,
+    PROFILE_AVATAR_FETCH_FINISHED,
 } from '../../constants/actionTypes';
 
 export const isFetchingAvatar = (prevState = false, action) => {
@@ -10,6 +11,7 @@ export const isFetchingAvatar = (prevState = false, action) => {
             return true;
 
         case PROFILE_AVATAR_FETCH_FAILED:
+        case PROFILE_AVATAR_FETCH_FINISHED:
         case PROFILE_AVATAR_UPDATE:
             return false;
 
