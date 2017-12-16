@@ -4,16 +4,17 @@ export const AUTHENTICATION_FAILED_MESSAGE = 'Authentication failed.';
 export const AUTHENTICATION_EXPIRED_MESSAGE = 'Your authentication expired.';
 export const REGISTRATION_FAILED_MESSAGE = 'Your registration failed.';
 
-export const FETCH_PROFILE_DETAILS_FAILED_MESSAGE = 'Obtaining profile details failed.';
-export const UPDATE_PROFILE_DETAILS_FAILED_MESSAGE = 'Updating profile details failed.';
-export const FETCH_AVATAR_FAILED_MESSAGE = 'Obtaining avatar failed.';
-export const UPDATE_AVATAR_FAILED_MESSAGE = 'Updating avatar failed.';
+export const PROFILE_DETAILS_FETCH_FAILED_MESSAGE = 'Obtaining profile details failed.';
+export const PROFILE_DETAILS_UPDATE_FAILED_MESSAGE = 'Updating profile details failed.';
+export const AVATAR_FETCH_FAILED_MESSAGE = 'Obtaining avatar failed.';
+export const AVATAR_UPDATE_FAILED_MESSAGE = 'Updating avatar failed.';
 
-export const FETCH_CHANNELS_FAILED_MESSAGE = 'Fetching channels failed. Try to reload a page.';
-export const CREATE_CHANNEL_FAILED_MESSAGE = 'Creating channel failed.';
-export const DELETE_CHANNEL_FAILED_MESSAGE = 'Deleting channel failed.';
-export const RENAME_CHANNEL_FAILED_MESSAGE = 'Renaming channel failed.';
+export const CHANNELS_FETCH_FAILED_MESSAGE = 'Fetching channels failed. Try to reload a page.';
+export const CHANNEL_CREATE_FAILED_MESSAGE = 'Creating channel failed.';
+export const CHANNEL_DELETE_FAILED_MESSAGE = 'Deleting channel failed.';
+export const CHANNEL_RENAME_FAILED_MESSAGE = 'Renaming channel failed.';
 export const CHANNEL_INVITE_USER_FAILED_MESSAGE = 'Inviting user to channel failed.';
 
-export const FETCH_MESSAGES_FAILED_MESSAGE = 'Fetching messages failed. Try to reload a page.';
-export const SEND_MESSAGE_FAILED_MESSAGE = 'Sending message failed. Try to send it again.';
+export const MESSAGES_FETCH_FAILED_MESSAGE = 'Fetching messages failed. Try to reload a page.';
+export const MESSAGE_SEND_FAILED_MESSAGE = 'Sending message failed. Try to send it again.';
+export const MESSAGE_DELETE_FAILED_MESSAGE = 'Deleting message failed.';

@@ -13,19 +13,20 @@ import {
     finishRegistration,
     startRegistration,
 } from "./actionCreators";
+import { convertProfileToServerDetails } from "../../utils/api/conversions";
 
-export const registerUser = (userEmail, userName, destinationLocation) =>
+export const registerUser = (userDetails, destinationLocation) =>
     (dispatch) => {
         dispatch(startRegistration());
 
-        const details = {
-            email: userEmail,
-            customData: {
-                name: userName
-            },
+        const serverDetails = {
+            email: userDetails.userEmail,
+            customData: JSON.stringify({
+                fullName: userDetails.fullName,
+            }),
         };
 
-        return postRequest(API_CREATE_USER_URI, EXAMPLE_USER_TOKEN, details)
+        return postRequest(API_CREATE_USER_URI, EXAMPLE_USER_TOKEN, serverDetails)
             .then(() => {
                 dispatch(finishRegistration());
                 dispatch(push(destinationLocation));

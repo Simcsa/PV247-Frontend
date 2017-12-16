@@ -3,7 +3,7 @@ import {
 } from '../shared/actionCreators';
 import {
     MILISECONDS_TO_AUTO_DISMISS_ERROR,
-    SEND_MESSAGE_FAILED_MESSAGE
+    MESSAGE_SEND_FAILED_MESSAGE
 } from '../../constants/uiConstants';
 import { API_MESSAGES_URI } from "../../constants/api";
 import {
@@ -33,7 +33,7 @@ export const sendMessage = (channelId, value) =>
                 dispatch(finishSendingMessage(convertMessageFromServer(details)));
             })
             .catch((error) => {
-                const dispatchedAction = dispatch(failSendingMessage(SEND_MESSAGE_FAILED_MESSAGE, error));
+                const dispatchedAction = dispatch(failSendingMessage(MESSAGE_SEND_FAILED_MESSAGE, error));
                 setTimeout(() => dispatch(dismissError(dispatchedAction.payload.error.id)), MILISECONDS_TO_AUTO_DISMISS_ERROR);
             });
     };

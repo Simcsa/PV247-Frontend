@@ -3,7 +3,7 @@ import {
 } from '../shared/actionCreators';
 import {
     MILISECONDS_TO_AUTO_DISMISS_ERROR,
-    FETCH_CHANNELS_FAILED_MESSAGE
+    CHANNELS_FETCH_FAILED_MESSAGE
 } from '../../constants/uiConstants';
 import { API_CHANNELS_URI } from "../../constants/api";
 import {
@@ -25,7 +25,7 @@ export const fetchChannels = () =>
                 dispatch(finishFetchingChannels(convertChannelsFromServerDetails(details)));
             })
             .catch((error) => {
-                const dispatchedAction = dispatch(failFetchingChannels(FETCH_CHANNELS_FAILED_MESSAGE, error));
+                const dispatchedAction = dispatch(failFetchingChannels(CHANNELS_FETCH_FAILED_MESSAGE, error));
                 setTimeout(() => dispatch(dismissError(dispatchedAction.payload.error.id)), MILISECONDS_TO_AUTO_DISMISS_ERROR);
             });
     };

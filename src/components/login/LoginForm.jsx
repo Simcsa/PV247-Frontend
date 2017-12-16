@@ -15,7 +15,7 @@ const LoginForm = ({ handleSubmit }) => (
                 screenReaderName="E-mail"
                 glyphiconClassName="glyphicon-envelope"
                 placeholder="exampleUser@example.com"
-                validate={validateNonEmptyness}
+                validate={validateNonEmptyness("email")}
             />
         </div>
         <button className="btn btn-primary btn-lg" type="submit" >Log in</button>

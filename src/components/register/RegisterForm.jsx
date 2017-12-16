@@ -15,7 +15,7 @@ const RegisterForm = ({ handleSubmit }) => (
                 screenReaderName="E-mail"
                 glyphiconClassName="glyphicon-envelope"
                 placeholder="exampleUser@example.com"
-                validate={validateNonEmptyness}
+                validate={validateNonEmptyness("email")}
             />
         </div>
         <div>
@@ -23,11 +23,11 @@ const RegisterForm = ({ handleSubmit }) => (
                 component={Input}
                 required
                 type="text"
-                name="name"
+                name="fullName"
                 screenReaderName="Name"
                 glyphiconClassName="glyphicon-user"
                 placeholder="Example User"
-                validate={validateNonEmptyness}
+                validate={validateNonEmptyness("fullName")}
             />
         </div>
         <button className="btn btn-primary btn-lg" type="submit" >Register</button>

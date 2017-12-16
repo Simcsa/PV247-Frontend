@@ -1,12 +1,11 @@
-import * as Immutable from 'immutable';
-
-export const convertFromServerDetails = (serverDetails) => ({
+export const convertProfileFromServerDetails = (serverDetails) => ({
     ...JSON.parse(serverDetails.customData || '{}'),
     email: serverDetails.email,
 });
 
-export const convertToServerDetails = (details) => JSON.stringify({
+export const convertProfileToServerDetails = (details) => JSON.stringify({
     ...details,
+    email: undefined
 });
 
 export const convertChannelsFromServerDetails = (serverDetails) => (

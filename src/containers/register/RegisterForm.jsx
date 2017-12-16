@@ -6,7 +6,7 @@ import { REGISTER_FORM_NAME } from "../../constants/formNames";
 import { registerUser } from "../../actions/shared/registerUser";
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    onSubmit: (userDetails) => dispatch(registerUser(userDetails.email, userDetails.name, ownProps.from))
+    onSubmit: (userDetails) => dispatch(registerUser(userDetails, ownProps.from))
 });
 
 const formConfig = {
