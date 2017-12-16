@@ -1,11 +1,11 @@
 import * as Immutable from 'immutable';
 import {
-    CHANNELS_FETCH_STARTED,
     MESSAGES_FETCH_FINISHED,
     MESSAGES_FETCH_FAILED,
     MESSAGE_SEND_FINISHED,
     MESSAGE_DELETE_FINISHED,
     MESSAGE_VOTE,
+    MESSAGES_FETCH_STARTED,
 } from '../../constants/actionTypes';
 
 export const messagesList = (prevState = Immutable.List(), action) => {
@@ -24,7 +24,7 @@ export const messagesList = (prevState = Immutable.List(), action) => {
             const newState = prevState.update(voteMessageIndex, () => action.payload.message)
             return newState;
 
-        case CHANNELS_FETCH_STARTED:
+        case MESSAGES_FETCH_STARTED:
         case MESSAGES_FETCH_FAILED:
             return Immutable.List();
 

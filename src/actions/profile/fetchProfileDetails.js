@@ -30,7 +30,7 @@ export const fetchProfileDetails = () =>
         return getRequest(API_USER_URI(userEmail), token)
             .then((serverDetails) => dispatch(updateProfileDetails(convertProfileFromServerDetails(serverDetails))))
             .then(({ payload: {details: { avatarId } = {} } = {} }) =>
-            { avatarId ? dispatch(fetchUserAvatar(avatarId)) : dispatch(finishFetchingProfilePicture)})
+            { avatarId ? dispatch(fetchUserAvatar(avatarId)) : dispatch(finishFetchingProfilePicture())})
             .catch((error) => {
                 if (error.statusCode === 401) {
                     dispatch(invalidateToken());

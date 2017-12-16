@@ -35,3 +35,12 @@ export const dismissError = (errorId) => ({
         errorId,
     }
 });
+
+export const fetchUsersFinished = (users) => ({
+    type: actionTypes.USERS_FETCH,
+    payload: {
+        users,
+    }
+});
+
+export const failFetchingUsers = errorActionFactory(actionTypes.USERS_FETCH_FAILED);

@@ -8,6 +8,7 @@ export const API_AUTH_URI = `${API_URI}/auth`;
 export const API_CHANNELS_URI = `${API_URI}/app/${API_APP_ID}`;
 
 export const API_CREATE_USER_URI = `${API_URI}/${API_APP_ID}/user`;
+export const API_GET_USERS_URI = `${API_URI}/${API_APP_ID}/user`;
 export const API_USER_URI = (userEmail) => `${API_URI}/${API_APP_ID}/user/${userEmail}`;
 
 export const API_FILE_URI = `${API_URI}/file`;

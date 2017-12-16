@@ -1,4 +1,4 @@
-import { validateDelete, validateResponse } from './validateResponse';
+import { validateDelete } from './validateResponse';
 
 export const deleteRequest = (uri, token) =>
     fetch(

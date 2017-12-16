@@ -56,7 +56,7 @@ export class Messages extends React.Component {
                         </button>
                     </MessageForm>
                     }
-                    {this.props.messages && this.props.messages.map((m) =>
+                    {this.props.channel && this.props.messages && this.props.messages.map((m) =>
                         <MessageDiv key={m.id}>
                             <Message
                                 message={m}

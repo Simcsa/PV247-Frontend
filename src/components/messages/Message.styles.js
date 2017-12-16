@@ -18,3 +18,7 @@ export const GlyphiconSpan = styled.span`
     padding-left: 10px;
     padding-right: 2px;
 `;
+
+export const UserImage = styled.img`
+     width: 50px;
+`;

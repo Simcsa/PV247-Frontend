@@ -6,6 +6,7 @@ import { downvoteMessage } from "../../actions/messages/downvoteMessage";
 
 const mapStateToProps = (state, ownProps) => ({
     message: ownProps.message,
+    user: state.shared.usersList.find((user) => user.email === ownProps.message.createdBy),
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

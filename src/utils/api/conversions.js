@@ -29,3 +29,9 @@ export const convertMessageFromServer = (message) => ({
     createdAt: message.createdAt,
     createdBy: message.createdBy,
 });
+
+
+export const convertUsersFromServerDetails = (serverDetails) => (
+    serverDetails.map((user) => convertProfileFromServerDetails(user))
+);
+

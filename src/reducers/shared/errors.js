@@ -15,7 +15,7 @@ import {
     PROFILE_DETAILS_FETCH_FAILED,
     PROFILE_DETAILS_UPDATE_FAILED,
     MESSAGE_DELETE_FAILED,
-    MESSAGE_VOTE_FAILED,
+    MESSAGE_VOTE_FAILED, USERS_FETCH_FAILED,
 } from '../../constants/actionTypes';
 import { LOCATION_CHANGE } from 'connected-react-router';
 
@@ -36,6 +36,7 @@ export const errors = (previousState = Immutable.OrderedMap(), action) => {
         case PROFILE_AVATAR_UPDATE_FAILED:
         case PROFILE_DETAILS_FETCH_FAILED:
         case PROFILE_DETAILS_UPDATE_FAILED:
+        case USERS_FETCH_FAILED:
             return previousState.set(action.payload.error.id, { ...action.payload.error });
 
         case SHARED_DISMISS_ERROR:

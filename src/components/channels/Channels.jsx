@@ -12,6 +12,7 @@ export class Channels extends React.PureComponent {
         isFetchingChannels: PropTypes.bool,
         isUpdatingChannels: PropTypes.bool,
         fetchChannels: PropTypes.func.isRequired,
+        fetchUsers: PropTypes.func.isRequired,
         createChannel: PropTypes.func.isRequired,
         switchChannel: PropTypes.func.isRequired,
     };
@@ -25,6 +26,7 @@ export class Channels extends React.PureComponent {
 
     componentWillMount() {
         this.props.fetchChannels();
+        this.props.fetchUsers();
         this.setState({newChannelName: null});
     }
 

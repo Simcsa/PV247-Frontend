@@ -4,6 +4,7 @@ import { token } from "./token";
 import { errors } from "./errors";
 import { isRegistering } from "./isRegistering";
 import { userEmail } from "./userEmail";
+import { usersList } from "./usersList";
 
 export const shared = combineReducers({
     isAuthenticating,
@@ -11,4 +12,5 @@ export const shared = combineReducers({
     token,
     userEmail,
     errors,
+    usersList,
 });
