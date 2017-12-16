@@ -11,6 +11,7 @@ export class Messages extends React.Component {
 
     static propTypes = {
         channel: PropTypes.object,
+        channelOwnerName: PropTypes.string,
         messages: Immutable.List,
         isFetchingMessages: PropTypes.bool,
         isSendingMessage: PropTypes.bool,
@@ -32,14 +33,21 @@ export class Messages extends React.Component {
     }
 
     render() {
-        const noChannelChosenMessage = <h2>Messages - click on a channel to see messages</h2>;
-        const channelMessage = this.props.channel && <h1>{this.props.channel.name}</h1>;
+        const noChannelChosenMessage = <h1>Click on a channel to see messages</h1>;
+
+        if (!this.props.channel) {
+            return (
+                <MessagePane>
+                    {noChannelChosenMessage}
+                </MessagePane>
+            )
+        }
 
         return (
             <MessagePane>
-                {this.props.channel ? channelMessage : noChannelChosenMessage}
+                <h1>{this.props.channel.name}</h1>
+                <p>{this.props.channelOwnerName} (owner)</p>
                 <Loader stateLoadingSelector={state => state.messages.isFetchingMessages}>
-                    {this.props.channel &&
                     <MessageForm className="form-inline">
                         <MessageTextarea
                             rows="3"
@@ -55,8 +63,7 @@ export class Messages extends React.Component {
                             Send
                         </button>
                     </MessageForm>
-                    }
-                    {this.props.channel && this.props.messages && this.props.messages.map((m) =>
+                    {this.props.messages && this.props.messages.map((m) =>
                         <MessageDiv key={m.id}>
                             <Message
                                 message={m}

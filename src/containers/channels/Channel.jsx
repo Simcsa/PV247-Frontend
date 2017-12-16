@@ -3,9 +3,14 @@ import { Channel } from '../../components/channels/Channel.jsx';
 import { deleteChannel } from "../../actions/channels/deleteChannel";
 import { renameChannel } from "../../actions/channels/renameChannel";
 
-const mapStateToProps = (state, ownProps) => ({
-    channel: ownProps.channel,
-});
+const mapStateToProps = (state, ownProps) => {
+    const canDeleteChannel = ownProps.channel && state.shared.userEmail === ownProps.channel.owner;
+
+    return ({
+        channel: ownProps.channel,
+        canDeleteChannel
+    });
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     renameChannel: (channel, channelName) => dispatch(renameChannel(channel, channelName)),

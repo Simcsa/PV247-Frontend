@@ -21,8 +21,7 @@ export const messagesList = (prevState = Immutable.List(), action) => {
 
         case MESSAGE_VOTE:
             const voteMessageIndex = prevState.findIndex((message) => action.payload.message.id === message.id);
-            const newState = prevState.update(voteMessageIndex, () => action.payload.message)
-            return newState;
+            return prevState.update(voteMessageIndex, () => action.payload.message);
 
         case MESSAGES_FETCH_STARTED:
         case MESSAGES_FETCH_FAILED:

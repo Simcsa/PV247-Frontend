@@ -7,6 +7,7 @@ export class Message extends React.PureComponent {
     static propTypes = {
         message: PropTypes.object,
         user: PropTypes.object,
+        canDeleteMessage: PropTypes.bool,
         deleteMessage: PropTypes.func.isRequired,
         upvoteMessage: PropTypes.func.isRequired,
         downvoteMessage: PropTypes.func.isRequired,
@@ -30,9 +31,11 @@ export class Message extends React.PureComponent {
                         </MessageSenderSpan>
                         &nbsp;
                         {date.toLocaleString()}
-                        <GlyphiconSpan onClick={this.props.deleteMessage}>
-                            <i className="glyphicon glyphicon-trash"  aria-hidden="true" />
-                        </GlyphiconSpan>
+                        {this.props.canDeleteMessage &&
+                            <GlyphiconSpan onClick={this.props.deleteMessage}>
+                                <i className="glyphicon glyphicon-trash" aria-hidden="true"/>
+                            </GlyphiconSpan>
+                        }
 
                         <GlyphiconSpan onClick={this.props.upvoteMessage}>
                             <i className="glyphicon glyphicon-thumbs-up"  aria-hidden="true" />

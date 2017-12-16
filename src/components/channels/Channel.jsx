@@ -7,6 +7,7 @@ export class Channel extends React.PureComponent {
 
     static propTypes = {
         channel: PropTypes.object,
+        canDeleteChannel: PropTypes.bool,
         deleteChannel: PropTypes.func.isRequired,
         renameChannel: PropTypes.func.isRequired,
         switchChannel: PropTypes.func.isRequired,
@@ -68,9 +69,11 @@ export class Channel extends React.PureComponent {
                 }
 
                 &nbsp;
-                <GlyphiconSpan className="pull-right" onClick={() => this.props.deleteChannel(this.props.channel.id)}>
-                    <i className="glyphicon glyphicon-trash"  aria-hidden="true" />
-                </GlyphiconSpan>
+                {this.props.canDeleteChannel &&
+                    <GlyphiconSpan className="pull-right" onClick={() => this.props.deleteChannel(this.props.channel.id)}>
+                        <i className="glyphicon glyphicon-trash" aria-hidden="true"/>
+                    </GlyphiconSpan>
+                }
             </ChannelListGroup>
         );
     }
