@@ -13,14 +13,13 @@ import {
     finishRegistration,
     startRegistration,
 } from "./actionCreators";
-import { convertProfileToServerDetails } from "../../utils/api/conversions";
 
 export const registerUser = (userDetails, destinationLocation) =>
     (dispatch) => {
         dispatch(startRegistration());
 
         const serverDetails = {
-            email: userDetails.userEmail,
+            email: userDetails.email,
             customData: JSON.stringify({
                 fullName: userDetails.fullName,
             }),
