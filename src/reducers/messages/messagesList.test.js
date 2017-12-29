@@ -1,11 +1,14 @@
 import * as Immutable from 'immutable';
 import { messagesList } from "./messagesList";
 import {
-    MESSAGE_DELETE_FINISHED,
-    MESSAGE_SEND_FINISHED, MESSAGE_VOTE,
-    MESSAGES_FETCH_FAILED,
-    MESSAGES_FETCH_FINISHED
+    MESSAGE_VOTE,
 } from "../../constants/actionTypes";
+import {
+    failFetchingMessages,
+    finishDeletingMessage,
+    finishFetchingMessages,
+    finishSendingMessage
+} from "../../actions/messages/actionCreators";
 
 const message1 = {
     id: '1',
@@ -28,12 +31,7 @@ describe('messagesList', () => {
             message1,
         ];
 
-        const action = {
-            type: MESSAGE_SEND_FINISHED,
-            payload: {
-                message: message2
-            }
-        };
+        const action = finishSendingMessage(message2);
 
         expect(messagesList(Immutable.List([message1]), action)).toEqual(Immutable.List(messages))
     });
@@ -44,12 +42,7 @@ describe('messagesList', () => {
             message2,
         ];
 
-        const action = {
-            type: MESSAGE_DELETE_FINISHED,
-            payload: {
-                messageId: message1.id
-            }
-        };
+        const action = finishDeletingMessage(message1.id);
 
         expect(messagesList(Immutable.List(messages), action)).toEqual(Immutable.List([message2]))
     });
@@ -57,17 +50,12 @@ describe('messagesList', () => {
         const messages = [
             message1
         ];
-        const action = {
-            type: MESSAGES_FETCH_FINISHED,
-            payload: {
-                messages
-            }
-        };
+        const action = finishFetchingMessages(messages);
 
         expect(messagesList(undefined, action)).toEqual(Immutable.List(messages))
     });
     it('should handle when message fetching fails', () => {
-        expect(messagesList(undefined, {type: MESSAGES_FETCH_FAILED})).toEqual(Immutable.List())
+        expect(messagesList(undefined, failFetchingMessages())).toEqual(Immutable.List())
     });
     it('should handle voting message', () => {
 
