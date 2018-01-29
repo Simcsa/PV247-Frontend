@@ -6,7 +6,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchMessages: (channelId) => dispatch(fetchMessages(channelId)),
+    fetchMessages: (channelId, isReload) => dispatch(fetchMessages(channelId, isReload)),
 });
 
 const enhancer = connect(mapStateToProps, mapDispatchToProps);

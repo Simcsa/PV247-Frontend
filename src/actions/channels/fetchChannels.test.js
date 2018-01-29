@@ -2,9 +2,8 @@ import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
 import fetchMock from 'fetch-mock'
 import { fetchChannels } from "./fetchChannels";
-import { CHANNELS_FETCH_FAILED, CHANNELS_FETCH_FINISHED, CHANNELS_FETCH_STARTED } from "../../constants/actionTypes";
+import { CHANNELS_FETCH_FINISHED, CHANNELS_FETCH_STARTED } from "../../constants/actionTypes";
 import { API_CHANNELS_URI } from "../../constants/api";
-import { errorActionFactory } from "../../utils/errorActionFactory";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

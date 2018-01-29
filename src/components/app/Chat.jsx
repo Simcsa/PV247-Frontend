@@ -21,8 +21,16 @@ export class Chat extends React.PureComponent {
         this.setState({channel: null});
     }
 
+    componentDidMount() {
+        this.interval = setInterval(() => this.state.channel && this.props.fetchMessages(this.state.channel.id, true), 5000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     switchChannel(newChannel) {
-        this.props.fetchMessages(newChannel.id);
+        this.props.fetchMessages(newChannel.id, false);
         this.setState({channel: newChannel});
     }
 

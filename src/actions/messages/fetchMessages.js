@@ -14,9 +14,11 @@ import {
 import { getRequest } from "../../utils/api/getRequest";
 import { convertMessagesFromServerDetails } from "../../utils/api/conversions";
 
-export const fetchMessages = (channelId) =>
+export const fetchMessages = (channelId, isReload) =>
     (dispatch, getState) => {
-        dispatch(startFetchingMessages());
+        if (!isReload) {
+            dispatch(startFetchingMessages());
+        }
 
         const token = getState().shared.token;
 
